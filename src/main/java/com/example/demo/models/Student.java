@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Table(
-        name = "student",
+        name = "students",
         uniqueConstraints = {
                 @UniqueConstraint(name = "student_unique_email", columnNames = "email")
         }
