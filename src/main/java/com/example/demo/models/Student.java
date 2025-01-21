@@ -3,8 +3,6 @@ package com.example.demo.models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.UUID;
-
 @Table(
         name = "students",
         uniqueConstraints = {
@@ -19,6 +17,10 @@ public class Student {
         this.email = email;
         this.age = age;
     }
+    public Student() {
+
+    }
+
 
     @Id
     @GenericGenerator(
@@ -32,7 +34,7 @@ public class Student {
             name = "id",
             updatable = false
     )
-    private UUID id;
+    private String id;
     @Column(
             name = "first_name",
             nullable = false,
@@ -57,10 +59,10 @@ public class Student {
     )
     private Integer age;
 
-    public UUID getId(){
+    public String getId(){
         return id;
     }
-    public void setId(UUID id){
+    public void setId(String id){
         this.id = id;
     }
     public String getFirstName(){
